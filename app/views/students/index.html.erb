@@ -11,29 +11,33 @@
 </p>
 <%= link_to "Add new Student", new_student_path%>
 
-<table class="table table-bordered table-dark">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>edit</th>
-      <th>Show</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
 
-  <tbody>
-   <% current_user.students.each do |student| %>
-      <tr>
-        <td><%= student.name%></td>
-        <td><%= student.age%></td>
-         <td><%= link_to "Show", student_path(student)%></td>
-        <td><%= link_to "Edit", edit_student_path(student)%></td>
 
-        <td><%= link_to "Delete",student_path(id:student.id) , method: :delete%></td>
-       
-        
-      </tr>
+
+  <div class="Rtable Rtable--5cols Rtable--collapse"">
+
+  <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Name</h3></div>
+  <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Age</h3></div>
+  <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Edit</h3></div>
+  <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Show</h3></div>
+  <div style="order:0;" class="Rtable-cell Rtable-cell--head"><h3>Delete</h3></div>
+  <% current_user.students.each do |student| %>
+     
+        <div  class="Rtable-cell" ><%= student.name%></div>
+    
+            
+        <div  class="Rtable-cell"><%= student.age%></div>
+   
+
+  		<div  class="Rtable-cell"><%= link_to "Show", student_path(student)%></div>
+  	
+  		<div  class="Rtable-cell"><%= link_to "Edit", edit_student_path(student)%></div>
+  	
+   		<div  class="Rtable-cell"><%= link_to "Delete",student_path(id:student.id) , method: :delete%></div>  
     <% end %>
-     </tbody>
-</table>
+  
+</div> 
+
+  
+   
+     
