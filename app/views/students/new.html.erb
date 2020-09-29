@@ -1,0 +1,18 @@
+<h1>Students New</h1>
+
+
+
+<% if flash[:errors]%>
+<% flash[:errors].each do |error| %>
+<p style="color: red;"><%= error %></p>
+<% end %>
+<% end %>
+
+<%= form_for @student do |f|%>
+<p>name</p>
+<%= f.text_field :name %>
+<p>age</p> 
+<%= f.number_field :age %>
+<%= f.submit %> 
+
+<% end %> 
