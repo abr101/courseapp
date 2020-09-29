@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'user/index'
+  root 'user/index'
   devise_for :users
   resources :students
   resources :enrollments, only: [:new, :create, :destroy]
@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get 'enrollments/create'
   get 'enrollments/destroy'
   get 'courses/index'
-  root 'students#index'
+  get 'students/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
