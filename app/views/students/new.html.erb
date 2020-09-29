@@ -13,6 +13,8 @@
 <%= f.text_field :name %>
 <p>age</p> 
 <%= f.number_field :age %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+
 <%= f.submit %> 
 
 <% end %> 

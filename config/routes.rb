@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user/index'
+  devise_for :users
   resources :students
   resources :enrollments, only: [:new, :create, :destroy]
   get 'enrollments/index'

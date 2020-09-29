@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-   <% @students.each do |student| %>
+   <% current_user.students.each do |student| %>
       <tr>
         <td><%= student.name%></td>
         <td><%= student.age%></td>
