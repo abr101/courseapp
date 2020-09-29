@@ -8,7 +8,7 @@ class EnrollmentsController < ApplicationController
   end
 
   def update
-  	@enrollment = Enrollment.create(params: .require(:enrollment).permit(:course_id, :student_id))
+  	@enrollment = Enrollments.create(params.permit!)
   	redirect_to enrollment_path(@enrollment.student)
   	
   end
