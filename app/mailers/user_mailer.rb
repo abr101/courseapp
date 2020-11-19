@@ -1,9 +1,6 @@
 class UserMailer < ApplicationMailer
-	default from: 'arahmed101@gmail.com'
-
-	def welcome_email
-    @user = params[:user]
-    @url  = 'https://abr101.herokuapp.com'
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
-  end
+	 def registration_confirmation(user) 
+   @message = 'whatever you want to say here!'
+   mail(:from => "arahmed101@gmail.com", :to => user.email, :subject => "Thank you for registration #{user.email.split("@")[0]}")
+end
 end
