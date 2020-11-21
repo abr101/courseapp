@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   #       sessions: 'users/sessions',
   #       registration: 'users/registrations'
   #     }
-  devise_for :users, :controllers => {registrations: 'users/registrations'}
+  devise_for :users, :controllers => {registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
   resources :students
   resources :enrollments, only: [:new, :create, :destroy]
   get 'enrollments/index'
